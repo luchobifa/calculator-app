@@ -25,7 +25,7 @@ body {
 .container{
   background-color: RGB(30, 28 , 29);
   width: 360px;
-  height: 490px;
+  height: 480px;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
@@ -89,7 +89,7 @@ body {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   outline: none;
   font-family: alarmclock;
-  font-size: 45px;
+  font-size: 40px;
 }
 
 .keypad{
@@ -120,7 +120,7 @@ body {
 
 .key{
   font-size: 16px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: sans-serif;
   display: grid;
   height: 50px;
   width: 85%;
@@ -140,7 +140,7 @@ body {
 }
 
 .topKeys{
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'sans-serif';
   font-size: 18px;
   display: grid;
   height: 50px;
@@ -159,7 +159,8 @@ body {
 }
 
 .bottomKey{
-  font-size: 18px;
+  font-family: 'sans-serif';
+  font-size: 20px;
   display: grid;
   height: 50px;
   width: 190%;

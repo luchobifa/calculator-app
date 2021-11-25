@@ -3,12 +3,46 @@ import {useState} from "react";
 
 function App() {
   const [value, setValue] = useState('0');
+  const [result, setResult] = useState('0');
+
+  function parseEval(str){
+    let arr = str.split(" ");
+    
+    //console.log(arr)
+
+    if (arr.includes("*") || arr.includes("/")){
+      for(let i = 0; i < arr.length; i++){
+        if(arr[i] === "*"){
+          arr[i + 1] = (Number(arr[i-1]) * Number(arr[i+1]))
+          console.log(arr)
+        }else if(arr[i] === "/"){
+          arr[i + 1] = (Number(arr[i-1]) / Number(arr[i+1]))
+        }
+      }
+    }
+    
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] === "+"){
+          arr[i + 1] = (Number(arr[i-1]) + Number(arr[i+1]))
+        }else if(arr[i] === "-"){
+          arr[i + 1] =(Number(arr[i-1]) - Number(arr[i+1]))
+        }
+      }
+    return arr[arr.length-1];
+  }
 
   function handleClick(e){
     if(value === '0'){
-      setValue(e.target.value)
-    }else{
+      setValue(e.target.value);
+      setResult(e.target.value);
+    }
+    else if(e.target.value === "+" || e.target.value === "-" || e.target.value === "*" || e.target.value === "/"){
+      setResult(result + " " + e.target.value + " ");
+      setValue(value.concat(e.target.value))
+    }
+    else{
       setValue(value.concat(e.target.value));
+      setResult(result.concat(e.target.value))
     }
   }
 
@@ -29,10 +63,11 @@ function App() {
   }
 
   function calculate(){
-    try{
-      setValue(eval(value).toString());
-    }catch(e){
+    if(!parseEval(result)){
       setValue('ERROR')
+    }
+    else{
+      setValue(parseEval(result).toString());
     }
   }
 
