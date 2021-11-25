@@ -1,38 +1,177 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Genos:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Genos:wght@300&family=Orbitron&display=swap');
+
+@font-face {
+  font-family: "alarmclock";
+  src: url("../src/font/alarm clock.ttf")
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: burlywood;
+  display: grid;
+  place-content: center;
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+  font-size: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container{
+  background-color: RGB(30, 28 , 29);
+  width: 360px;
+  height: 490px;
   display: flex;
   flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.result{
+  background-color: RGB(41, 41 , 41);
+  width: 93%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.retroDetail{
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 3px solid RGB(97, 47 , 51);
+  margin-bottom: 10px;
+}
+
+.retrocalculator{
+  color: RGB(223, 197 , 160);
+  font-family: 'Genos', sans-serif;
+  font-family: 'Orbitron', sans-serif;  
+  margin-left: 14px;
+  font-size: 18px;
+}
+
+.greyConteiner{
+  background-color: RGB(136, 136 , 120);
+  border: 6px inset;
+  border-top-color: RGB(28, 26 , 25);
+  border-right-color: RGB(28, 26 , 25);
+  border-bottom-color: RGB(28, 26 , 25);
+  border-left-color: rgb(179, 174, 174);
+  width: 93%;
+  height: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+.input{
+  width: 90%;
+  height: 82%;
+  text-align: right;
+  background-color: RGB(133, 125 , 87);
+  color: black;
+  border: none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  outline: none;
+  font-family: alarmclock;
+  font-size: 45px;
+}
+
+.keypad{
+  background-color: RGB(223, 197 , 160);
+  display: flex;
+  flex-direction: column;
+  /* place-items: center; */
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 80%;
+  width: 93%;
+  /* grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr); */
+  margin-bottom: 15px;
+  padding: 3px;
+  gap: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 98%;
+  gap: 5px;
+  padding: 3px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.key{
+  font-size: 16px;
+  font-family: 'Courier New', Courier, monospace;
+  display: grid;
+  height: 50px;
+  width: 85%;
+  place-content: center;
+  background: rgb(20,19,19);
+  background: linear-gradient(90deg, rgba(20,19,19,1) 0%, rgba(50,46,46,1) 35%, rgba(43,48,48,1) 100%);
+  /* background-color: RGB(55, 54 , 55); */
+  border-radius: 9%;
+  border: 6px solid RGB(49, 49 , 53);
+  color: rgba(255, 255, 255, 0.918);
+  /* cursor: pointer; */
+  font-weight: bold;
+}
+
+.key:hover{
+  box-shadow: rgba(27, 105, 139, 0.822) 0px 2px 4px 0px, rgba(27, 105, 139, 0.774) 0px 2px 16px 0px;
+}
+
+.topKeys{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 18px;
+  display: grid;
+  height: 50px;
+  width: 85%;
+  place-content: center;
+  background-color: RGB(244, 133 , 81);
+  border-radius: 9%;
+  border: 6px solid RGB(49, 49 , 53);
+  color: rgba(255, 255, 255, 0.87);
+  /* cursor: pointer; */
+  font-weight: bold;
+}
+
+.topKeys:hover{
+  box-shadow: rgba(27, 105, 139, 0.822) 0px 2px 4px 0px, rgba(27, 105, 139, 0.774) 0px 2px 16px 0px;
+}
+
+.bottomKey{
+  font-size: 18px;
+  display: grid;
+  height: 50px;
+  width: 190%;
+  place-content: center;
+  background-color: RGB(97, 92 , 71);
+  border-radius: 3px;
+  border: 6px solid RGB(49, 49 , 53);
+  color: rgba(255, 255, 255, 0.849);
+  /* cursor: pointer; */
+  font-weight: bold;
+}
+
+.bottomKey:hover{
+  box-shadow: rgba(27, 105, 139, 0.822) 0px 2px 4px 0px, rgba(27, 105, 139, 0.774) 0px 2px 16px 0px;
 }
